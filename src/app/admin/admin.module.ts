@@ -9,7 +9,6 @@ import {SidebarComponent} from '../components/sidebar/sidebar.component';
 import {ComponentsModule} from '../components/components.module';
 import {RouterModule} from '@angular/router';
 import {UserProfileComponent} from './menu/user-profile/user-profile.component';
-import {Ng2CompleterModule} from 'ng2-completer';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ApplicationRepository} from '../core/repository/application-repository';
 import {HttpClientModule} from '@angular/common/http';
@@ -26,7 +25,6 @@ const COMPONENTS = [DashboardComponent,
         CoreModule,
         ComponentsModule,
         RouterModule,
-        Ng2CompleterModule,
         ReactiveFormsModule,
         HttpClientModule
     ],

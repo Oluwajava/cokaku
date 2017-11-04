@@ -1,7 +1,6 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NotificationService} from "./notification/notification.service";
-import {Ng2CompleterModule} from "ng2-completer";
 import {ApplicationRepository} from "./repository/application-repository";
 import {HttpRepository} from "./repository/http-repository";
 import {CoreService} from "./core.service";
