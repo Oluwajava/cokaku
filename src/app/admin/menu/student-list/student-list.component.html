@@ -1,0 +1,124 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Student List</h4>
+                    </div>
+                    <div class="card-content table-responsive">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Date of Birth</th>
+                                    <th>Address</th>
+                                    <th>Guardian Name</th>
+                                    <th>Guardian Email</th>
+                                    <th>Guardian Address</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let student of students">
+                                    <td>{{student.firstName}}</td>
+                                    <td>{{student.lastName}}</td>
+                                    <td>{{student.dateOfBirth}}</td>
+                                    <td>{{student.address}}</td>
+                                    <td>{{student.guardianName}}</td>
+                                    <td>{{student.guardianEmail}}</td>
+                                    <td>{{student.guardianAddress}}</td>
+                                    <td><button class='btn btn-danger no-margin' (click)="delete(student._id)">Delete</button></td>
+                                    <td><button class='btn btn-danger no-margin' data-toggle="modal" data-target="#myModal" (click)="editUser(student)">Edit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Update Record</h4>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div>
+                        <div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">First Name</label>
+                                        <input type="text" class="form-control" formControlName="firstName">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Last Name</label>
+                                        <input type="text" class="form-control" formControlName="lastName">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Date of Birth</label>
+                                        <input type="text" class="form-control" formControlName="dateOfBirth">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Adress</label>
+                                        <input type="text" class="form-control" formControlName="address">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Guardian Name</label>
+                                        <input type="text" class="form-control" formControlName="guardianName">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Guardian Email</label>
+                                        <input type="email" class="form-control" formControlName="guardianEmail">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Guardian Address</label>
+                                        <input type="text" class="form-control" formControlName="guardianAddress">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger pull-right">Save</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
